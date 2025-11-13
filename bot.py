@@ -1,6 +1,7 @@
 import disnake
 from disnake.ext import commands
 import random
+import os
 
 intents = disnake.Intents.none()
 intents.guilds = True  
@@ -11,7 +12,7 @@ client = disnake.Client(intents=intents)
 chance = 100 # 1 in X chance that there will be a bomb (default and global chance)
 timeout_in_seconds = 10  # How long will a mine time you out for in seconds (default and global chance)
 max_bombs = 20 # How many mines can be planted in one command? (Keep low to reduce extreme loads)
-Token = "" # Put token either here (not reccomended) or in .env file (preferred) if working with one and link it here.
+Token = os.environ['TOKEN'] # Put your token in your .env file if working on in an environment.
 
 #bombs - edit only if you want the bot to start while having bombs already planted
 global_mines = 0
