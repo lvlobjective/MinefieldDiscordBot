@@ -28,7 +28,7 @@ bot = commands.Bot(
     intents=intents
 )
 
-```
+'''
 @bot.slash_command(description="Plant any number of landmines globally.", default_member_permissions=disnake.Permissions(moderate_members=True))
 async def globalplant(
     inter: disnake.AppCmdInter,
@@ -51,7 +51,7 @@ async def globalplant(
             "Currently there are a total of " + str(global_mines) + " mines."
         )
 
-```
+'''
 @bot.slash_command(description="Plant any number of landmines in this channel only.", default_member_permissions=disnake.Permissions(moderate_members=True))
 async def plant(
     inter: disnake.AppCmdInter,
@@ -137,7 +137,7 @@ async def on_message(message: disnake.Message):
                 except Exception as e:
                     print("Couldn't timeout:", e)
 
-```
+'''
     if not exploded and global_mines > 0:
         await message.add_reaction("💥")
         if random.randint(1, chance) == 1:
@@ -155,7 +155,7 @@ async def on_message(message: disnake.Message):
                 )
             except Exception as e:
                 print("Couldn't timeout:", e)
-```
+'''
     await bot.process_commands(message)
 
 @bot.slash_command(description="Destroy all mines, everywhere, immediately.", default_member_permissions=disnake.Permissions(moderate_members=True))
